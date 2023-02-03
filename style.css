@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+  margin: 0;                                  /*Margine superiore, destro, sinistro e inferiore pari a 0px */
+  padding: 0;                                 /*spazio intorno agli elementi pari a 0px*/
+  scroll-behavior: smooth;                    /*permette di scrollare in modo più elegante*/
+} /*Formattazione generale foglio html, nei casi particolari vado poi a specificare, margini e spazi*/
+
+
+div.navbar {                                  /* Stile della barra di navigazione */
+  width: 100%;                                /* Lunghezza barra di navigazione 100% */
+  background-color: #000000;                  /*mi permette di cambiare il colore dello sfondo in nero */
+  overflow: auto;                             /*specifica cosa dovrebbe succedere se il contenuto supera il box di un elemento, in questo modo si adatta automaticamente*/
+  /*  position: -webkit-sticky;  Safari */
+  top: 0px;                                   /*distanza della barra a 0px*/
+}
+
+/* Elementi della barra */
+div.navbar a {
+  width: 50%;                                 /*essendo 4 , imposto a 25% cosi da ricoprire tutta la barra alla perfezione*/
+  float: left;                                /*utilizzata per posizionare e formattare il contenuto in questo caso a sinistra*/
+  text-align: center;                         /* allinea il testo al centro */
+  padding: 12px;                              /*sopra, sotto, destra e sinistra di 12px*/
+  color: white;                               /*colore del testo bianco.*/
+  text-decoration: none;                      /*permette di eliminare la sottolineatura, data dal link*/
+  font-size: 17px;                            /*dimensione del testo 17px*/
+  transition: all 1s ease;                    /*effetto di transition, durata 1s.*/
+}
+
+/* Ombra della barra */
+div.navbar a:hover {
+  background-color: #F8F8FF;                  /*colore di sfondo dove passo con il cursore nella barra, bianco*/
+  color:#000000;                              /*mi permette di cambiare il colore del testo in nero , inizialmente è bianco*/
+}
+.AforismaDP{
+  margin-top: -5%;
+}
+.AforismaGiorno{
+  margin-top:-5%;
+}
+.ImmagineAFG{
+  margin-top:5%;
+}
+.leadDP{
+  text-indent: 30px;
+  margin: 0;
+  margin-top:2%;
+  letter-spacing:0.5px;
+  line-height: 150%;
+}
+.leadAFDG{
+  font-style:oblique;
+}
+/* List */
+ul {
+  counter-reset: index;
+  padding: 0;
+  max-width: 300px;
+}
+
+/* List element */
+li {
+  counter-increment: index;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+}
+/* Element counter */
+li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, aquamarine, orangered);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Element separation */
+li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+@use postcss-preset-env {
+  stage: 0;
+  autoprefixer: {
+    grid: true;
+  }
+  browsers: last 2 versions
+}
